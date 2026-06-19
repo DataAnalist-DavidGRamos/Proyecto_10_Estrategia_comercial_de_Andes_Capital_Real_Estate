@@ -1,0 +1,6 @@
+DEFINE
+ MEASURE '_Medidas'[Ingreso Total] = SUM('hecho_ventas_propiedades'[precio_venta])
+EVALUATE
+ SUMMARIZECOLUMNS(
+ "Ingreso Total", [Ingreso Total]
+ )

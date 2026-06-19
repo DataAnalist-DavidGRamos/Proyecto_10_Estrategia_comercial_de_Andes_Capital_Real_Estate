@@ -1,0 +1,16 @@
+Mes Cohorte = STARTOFMONTH('hecho_ventas_propiedades'[Primera compra por cliente])
+Mes Venta = STARTOFMONTH('hecho_ventas_propiedades'[fecha_venta])
+Meses Desde Primera Compra = 
+DATEDIFF(
+ 'hecho_ventas_propiedades'[Mes Cohorte],
+ 'hecho_ventas_propiedades'[Mes Venta],
+ MONTH
+)
+Primera compra por cliente = 
+VAR _IdClienteActual = 'hecho_ventas_propiedades'[id_cliente]
+RETURN
+ CALCULATE(
+ MIN('hecho_ventas_propiedades'[fecha_venta]),
+ REMOVEFILTERS('hecho_ventas_propiedades'),
+ 'hecho_ventas_propiedades'[id_cliente] = _IdClienteActual
+ )

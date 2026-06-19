@@ -1,0 +1,47 @@
+DEFINE
+ MEASURE '_Contexto_Filtro'[% Participación por Tipo Propiedad] = VAR _IngresoActual = 
+[Ingreso Total]
+VAR _IngresoTotalPropiedades = 
+ CALCULATE(
+ [Ingreso Total],
+ REMOVEFILTERS('dim_propiedades'[tipo_propiedad])
+ )
+RETURN
+ DIVIDE(_IngresoActual, _IngresoTotalPropiedades, 0)
+
+ MEASURE '_Contexto_Filtro'[% Participación por Canal Venta] = VAR _IngresoActual = 
+[Ingreso Total]
+VAR _IngresoTotalCanales = 
+ CALCULATE(
+ [Ingreso Total],
+ REMOVEFILTERS('hecho_ventas_propiedades'[canal_venta])
+ )
+RETURN
+ DIVIDE(_IngresoActual, _IngresoTotalCanales, 0)
+
+ MEASURE '_Contexto_Filtro'[% Participación por Segmento Cliente] = VAR _IngresoActual 
+= [Ingreso Total]
+VAR _IngresoTotalSegmentos = 
+ CALCULATE(
+ [Ingreso Total],
+ REMOVEFILTERS('dim_clientes'[segmento_comprador])
+ )
+RETURN
+ DIVIDE(_IngresoActual, _IngresoTotalSegmentos, 0)
+
+ MEASURE '_Contexto_Filtro'[% de Retención] = VAR _ValorActual = [Ingreso Total]
+VAR _ValorMes0 = 
+ CALCULATE(
+ [Ingreso Total], 
+ REMOVEFILTERS('hecho_ventas_propiedades'[Meses Desde Primera Compra]),
+ 'hecho_ventas_propiedades'[Meses Desde Primera Compra] = 0
+ )
+RETURN
+ DIVIDE(_ValorActual, _ValorMes0, 0)
+EVALUATE
+ SUMMARIZECOLUMNS(
+ "% Participación por Tipo Propiedad", [% Participación por Tipo Propiedad],
+ "% Participación por Canal Venta", [% Participación por Canal Venta],
+ "% Participación por Segmento Cliente", [% Participación por Segmento Cliente],
+ "% de Retención", [% de Retención]
+ )

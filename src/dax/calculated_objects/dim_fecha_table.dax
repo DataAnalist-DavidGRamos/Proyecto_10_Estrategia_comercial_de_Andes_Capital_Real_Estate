@@ -1,0 +1,11 @@
+dim_fecha = 
+VAR _FechaMinima = MIN('hecho_ventas_propiedades'[fecha_venta])
+VAR _FechaMaxima = MAX('hecho_ventas_propiedades'[fecha_venta])
+RETURN
+ ADDCOLUMNS (
+ CALENDAR ( _FechaMinima, _FechaMaxima ),
+ "Año", YEAR ( [Date] ),
+ "Mes (nombre)", FORMAT ( [Date], "mmmm" ),
+ "Número de mes", MONTH ( [Date] ),
+ "Año-Mes (YYYY-MM)", FORMAT ( [Date], "yyyy-mm" ),
+ "OrdenFecha", [Date])
