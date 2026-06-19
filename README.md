@@ -112,6 +112,22 @@ Análisis de la distribución de ingresos según propiedades, canales de venta y
 ### 3.3 Matriz de Cohortes (Página 3)
 Evaluación del ciclo de vida del cliente y patrones transaccionales repetitivos en tiempo relativo.
 ![Cohortes Dashboard 1](docs/images/CH1.png)
+![Cohortes Dashboard 2](docs/images/CH%202.png)
+
+#### 🔍 Análisis Experto de Cohortes (Comportamiento de Retención)
+El análisis de cohortes del modelo de datos de Andes Capital permite extraer los siguientes insights de gobernanza y comportamiento relacional:
+
+1. **Metodología de Diagnóstico (Flujo vs Salud Relacional):**
+   * **Métrica de Cantidad/Venta Absoluta:** Es valiosa para evaluar el volumen operativo bruto y la planificación del flujo de caja a lo largo del calendario.
+   * **Métrica de % de Retención (Monto Relativo):** Es la única métrica que diagnostica con precisión la salud del negocio a largo plazo en un entorno temporal relativo. Permite normalizar y aislar el desgaste del cliente eliminando el efecto del tamaño original de la cohorte.
+
+2. **La Cohorte Extraordinaria de Marzo 2023:**
+   * Es la cohorte más sólida de toda la serie de tiempo. Logró registrar una facturación acumulada excepcional de **$296 millones**.
+   * Destaca por mantener recompras constantes y estables durante **19 meses consecutivos**, demostrando una lealtad y retención inusuales en comparación con el promedio general.
+
+3. **Diagnóstico de Degradación en Cohortes Recientes (2024):**
+   * Se identifica una señal de alerta comercial: las cohortes de **2024** inician con ingresos de adquisición (Mes 0) **casi 50% menores** en valor que las cohortes del primer trimestre (Q1) de 2023.
+   * Esto sugiere un desgaste prematuro en la relación inicial del cliente o que el costo/calidad de adquisición de clientes en 2024 ha decrecido, requiriendo campañas inmediatas de post-venta para elevar el LTV (Value a Largo Plazo).
 
 ---
 
@@ -152,7 +168,7 @@ Una vez estructurado el proyecto, inicialice y publique los cambios en Git:
 ```bash
 git init
 git add .
-git commit -m "feat: updated images context, unfiltered metrics status, and 3-month forecasting analysis"
+git commit -m "feat: expanded cohort analysis, retention metrics, and recent cohort health diagnosis"
 git branch -M main
 git push -u origin main
 ```
