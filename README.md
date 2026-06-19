@@ -21,6 +21,8 @@ El repositorio está organizado bajo las mejores prácticas de gobernanza de Int
 │   └── images/
 │       ├── CH1.png
 │       ├── CH 2.png
+│       ├── Comercial_Dashboard_Unfiltered.png
+│       ├── Overview_Dashboard_Unfiltered.png
 │       ├── FinalH1_A.png
 │       ├── FinalH1_B.png
 │       ├── FinalH1_C.png
@@ -80,7 +82,7 @@ Las capturas de los tableros analíticos muestran el **estado general consolidad
 
 ### 3.1 Overview Ejecutivo (Página 1)
 Presenta un balance de alto nivel con los KPIs financieros y geográficos en una vista general acumulada.
-![Overview Dashboard](docs/images/FinalH1_B.png)
+![Overview Dashboard (Sin filtrar año y con previsión)](docs/images/Overview_Dashboard_Unfiltered.png)
 
 > [!NOTE]
 > **Contexto de Filtros Temporal:** Como se muestra en la captura superior, los campos de **Crecimiento YoY** y **Ventas YTD** se encuentran vacíos (`--` / `(En blanco)`). Esto ocurre intencionalmente porque las visualizaciones representan el consolidado total histórico sin ningún año seleccionado en el segmentador lateral. Para que el motor DAX calcule correctamente el crecimiento acumulado anual y la comparativa interanual, el usuario final debe seleccionar un año específico (por ejemplo, el año más reciente: `2024`).
@@ -97,7 +99,7 @@ En el gráfico de líneas de **Tendencia de Ingresos**, se ha configurado un mod
 
 ### 3.2 Análisis Comercial (Página 2)
 Análisis de la distribución de ingresos según propiedades, canales de venta y segmentos de compradores en su estado consolidado sin filtrar año.
-![Análisis Comercial Dashboard](docs/images/FinalH2_A.png)
+![Análisis Comercial Dashboard (Sin filtrar año)](docs/images/Comercial_Dashboard_Unfiltered.png)
 
 * **Mix de Productos:** El gráfico de barras ratifica que **Casa** es la categoría dominante aportando el **37.26%** ($2,240.5M), seguida de **Comercial** ($1,924.6M) y **Departamento** ($1,847.2M).
 * **Gobernanza Visual en Tabla:** La matriz comercial utiliza formatos condicionales tipo semáforo para clasificar el rendimiento:
