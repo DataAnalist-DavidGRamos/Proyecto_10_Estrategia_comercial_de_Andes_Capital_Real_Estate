@@ -151,7 +151,7 @@ A partir de los tableros analíticos diseñados, se extraen las siguientes métr
 ## 🔍 5. Áreas de Oportunidad y Sugerencias de Mejora
 
 ### 🛠️ 5.1 Oportunidades Técnicas (Visuales y de Modelo)
-* **Ajuste de Visualización en Tarjetas de KPI (Truncamiento):** La tarjeta de "Ingreso Total" en el Overview Ejecutivo presenta truncamiento visual en el valor (`$6,0...5 mill.`). Se sugiere aumentar el ancho del contenedor visual, disminuir el tamaño de la fuente a 35pt, o modificar el formato de visualización a millones (`$6,012.5 M`) para garantizar una lectura limpia.
+* ** Se informa de un juste de Visualización en Tarjetas de KPI (Truncamiento):** La tarjeta de "Ingreso Total" en el Overview Ejecutivo presenta truncamiento visual en el valor (`$6,0...5 mill.`). Se indica la medida correcta (`$6,012.5 M`) para garantizar una lectura limpia.
 * **Gobernanza Monetaria y Tipo de Cambio:** El dashboard consolida y compara directamente facturaciones de **Ciudad de México** (MXN) y **Bogotá** (COP) bajo una misma escala numérica sin una tasa de conversión explícita. Esto distorsiona la comparación real de valor financiero. Se debe integrar una tabla de tipos de cambio históricos en el modelo estrella para normalizar la moneda (ej. a USD) o implementar un selector dinámico de divisa.
 
 ### 💼 5.2 Oportunidades de Estrategia de Negocio
@@ -161,14 +161,3 @@ A partir de los tableros analíticos diseñados, se extraen las siguientes métr
 
 ---
 
-## ⚙️ 6. Inicialización de Despliegue en Consola de Comandos (Git)
-
-Una vez estructurado el proyecto, inicialice y publique los cambios en Git:
-
-```bash
-git init
-git add .
-git commit -m "feat: expanded cohort analysis, retention metrics, and recent cohort health diagnosis"
-git branch -M main
-git push -u origin main
-```
